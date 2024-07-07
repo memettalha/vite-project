@@ -125,7 +125,7 @@ export function Shop(){
           <td>{shops.find((shop) => (shop.id === parseInt(product.shop))).name}</td>
           <td>{categories.find((category) => (category.id === parseInt(product.category))).name}</td>
           <td>{product.id}</td>
-          <IconButton/>
+        
         </tr>)} 
       </tbody>
      </Table>
