@@ -5,7 +5,7 @@ const IconButton = ({handleClick}) => {
   return (
     <div>
       <button onClick={(e) => {e.stopPropagation()
-        handleClick()}
+       }
       }><FaTrash/></button>
       
     </div>

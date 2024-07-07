@@ -109,18 +109,17 @@ export function Shop(){
         {products.map((product) => 
         <tr style={{
           textDecoration: product.isBought ? "line-through" : "none",
-        }}   onClick={() => {
-          const updatedProducts = products.map((oldProduct) =>
-         { if(oldProduct.id === product.id){
-            return {...oldProduct, isBougth:true}
-          }else{
-            return oldProduct;
-          }}
-         ) 
-         console.log(updatedProducts)
-
-         setProducts(...updatedProducts)
-         }} key={product.id}>
+        }}  onClick={() => {
+          const updatedProducts = products.map(oldProduct =>{
+            if(oldProduct.id === product.id){
+              return {...oldProduct, isBought:true}
+            }else{
+              return oldProduct;
+            }
+          })
+          console.log(updatedProducts)
+          setProducts(updatedProducts)
+          }} key={product.id}>
           <td>{product.name}</td>
           <td>{shops.find((shop) => (shop.id === parseInt(product.shop))).name}</td>
           <td>{categories.find((category) => (category.id === parseInt(product.category))).name}</td>
